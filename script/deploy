@@ -1,4 +1,4 @@
-ssh -o PasswordAuthentication=yes root@192.168.0.218 <<EOF
+ssh root@192.168.0.218 <<EOF
     cd /home/node_test/jenkins_test
     git pull
     npm install
