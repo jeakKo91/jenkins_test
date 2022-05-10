@@ -1,8 +1,14 @@
-ssh root@192.168.0.218 <<EOF
+ssh root@192.168.0.218 'bash -s'<<EOF
+    curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash \
+        && . /usr/local/nvm/nvm.sh \
+        && nvm install $NODE_VERSION \
+        && nvm alias default $NODE_VERSION \
+        && nvm use default
     cd /home/node_test/jenkins_test
     git pull
     npm install
     npm install -g pm2
+    pm2 stop all
     pm2 start ./bin/www
     exit
 EOF
