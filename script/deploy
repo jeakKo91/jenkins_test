@@ -1,4 +1,5 @@
-ssh root@192.168.0.218 <<EOF
+ssh-keygen -R 192.168.0.218
+ssh -o PasswordAuthentication=yes root@192.168.0.218 <<EOF
     cd /home/node_test/jenkins_test
     git pull
     npm install
@@ -6,3 +7,7 @@ ssh root@192.168.0.218 <<EOF
     pm2 start ./bin/www
     exit
 EOF
+#ssh-keygen -t rsa
+#cat ~/.ssh/id_rsa.pub
+
+ssh-keygen -R 192.168.0.218
