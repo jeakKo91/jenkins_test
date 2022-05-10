@@ -1,4 +1,4 @@
-ssh -p 11111 root@192.168.0.218 <<EOF
+ssh root@192.168.0.218 <<EOF
     cd /home/node_test/jenkins_test
     git pull
     curl -o-   https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh    | bash
